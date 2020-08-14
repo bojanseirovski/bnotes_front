@@ -74,6 +74,11 @@ const Challenge = props => {
 
     return (
         <div>
+            <div className="row text-heading">
+                <div className="col-md-2">Name</div>
+                <div className="col-md-2">Start</div>
+                <div className="col-md-2">End</div>
+            </div>
             <div className="row">
                 <div className="col-md-2">{currentChallengeInfo.name}</div>
                 <div className="col-md-2">{currentChallengeInfo.start}</div>
@@ -83,18 +88,19 @@ const Challenge = props => {
                 <div className="col-lg-12"> &nbsp;</div>
             </div>
             <div className="row">
-                <div className="col-md-6">
-                    <p>Users in this challenge</p>
+                <div className="col-md-4">
+                    <p className="text-heading">Users in this challenge</p>
                     <ul>
                         {currentChallenge && currentChallenge.map((oneUser, index) => (
                             <li key={oneUser.id}>
                                 <Link to={`/profile/${oneUser.id}`}>{oneUser.name}</Link>
+                                &nbsp;
                                 <button onClick={addPoint} data-uid={oneUser.id} className="btn btn-info">Add Point</button>
                             </li>
                         ))}
                     </ul>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 text-heading">
                     <p>Total challenge points</p>
                     <div>
                         {currentChallengeTotalPoints}

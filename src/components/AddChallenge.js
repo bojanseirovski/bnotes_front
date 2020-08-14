@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
+import 'react-datepicker/dist/react-datepicker-cssmodules.css';
+
 import ChallengeService from "../service/ChallengeService.js";
 
 const AddChallenge = props => {
     const initialChallengeState = {
         id: null,
         name: "",
-        start: "",
+        start: new Date(),
         end: ""
     };
-
-    const [currentChallenge, setCurrentChallenge] = useState(initialChallengeState);
 
     const formatDate = (date) => {
         var d = new Date(date),
@@ -25,17 +28,33 @@ const AddChallenge = props => {
         return [year, month, day].join('-');
     }
 
-    const addChallenge = () => {
-        var startDate = new Date();
-        var start = formatDate(startDate);
-        var end = formatDate(new Date(startDate.setMonth(startDate.getMonth() + 1)));
+    const [sdate, setsDate] = useState(new Date());
+    const [edate, seteDate] = useState(new Date());
+    const [cname, setName] = useState('');
 
+    const handleChange = (dateName, dateValue) => {
+
+        if (dateName === 'startD') {
+            setsDate(dateValue)
+        } else if (dateName === 'endD') {
+            seteDate(dateValue)
+        }
+    }
+
+    const handleInputChange = event => {
+        setName( event.target.value);
+    };
+
+    const addChallenge = () => {
         var data = {
-            name: initialChallengeState.name,
-            start: start,
-            end: end
+            name: cname,
+            start: formatDate(sdate),
+            end: formatDate(edate)
         };
 
+        if (!data.name) {
+            return;
+        }
         ChallengeService.createChallenge(data)
             .then(response => {
                 window.location.reload(false);
@@ -45,18 +64,38 @@ const AddChallenge = props => {
             });
     }
 
-    const handleInputChange = event => {
-        initialChallengeState.name = event.target.value;
-    };
-
     return (
         <div>
             <div className="row">
-                <div className="col-md5">
-                    <input type="text" name="challenge_n" onChange={handleInputChange} placeholder="Enter Challenge name to quickadd" />
+                <div className="col-md5">New challenge</div>
+            </div>
+            <div className="row">
+                <div className="col-md-3">
+                    <input type="text"
+                        name="challenge_n"
+                        value={cname}
+                        className="form-control"
+                        onChange={handleInputChange}
+                        placeholder="Challenge name" />
                 </div>
-                <div className="col-md5">
-                    <button onClick={addChallenge} className="btn btn-info">New Challenge</button>
+                <div className="col-md-3">
+                    <DatePicker
+                        name="startD"
+                        selected={sdate}
+                        onChange={sdate => handleChange('startD', sdate)}
+                        className="form-control"
+                    />
+                </div>
+                <div className="col-md-3">
+                    <DatePicker
+                        name="endD"
+                        selected={edate}
+                        onChange={edate => handleChange('endD', edate)}
+                        className="form-control"
+                    />
+                </div>
+                <div className="col-md-2">
+                    <button onClick={addChallenge} className="btn btn-info">Add</button>
                 </div>
             </div>
         </div>

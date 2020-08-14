@@ -4,24 +4,14 @@ import AddChallenge from '../components/AddChallenge.js';
 
 
 class AllChallenges extends React.Component {
-   constructor(props) {
-      super(props)
-      this.state = {
-         newChallengeName: ''
-      }
-   }
-
-   addChallenge = () => {
-      console.log(this.state.newChallenge);
-   }
 
    render() {
       return (
          <div id="container">
-            <h2>Challenge</h2>
-            <div>
-               {<Challenges />}
-               {<AddChallenge/>}
+            <h2>Challenges</h2>
+            <div className="row">
+               <div className="col-md-6">{<Challenges />}</div>
+               <div className="col-md-6">{<AddChallenge/>}</div>
             </div>
          </div>
       );

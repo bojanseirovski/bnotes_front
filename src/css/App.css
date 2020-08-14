@@ -9,12 +9,6 @@ body {
   border             : 0;
   margin             : 0;
   padding            : 0;
-  background-color   : cadetblue;
-  background-image   : url(../img/win.jpg);
-  background-repeat  : no-repeat;
-  background-size    : 160%;
-  background-position: 50% 0;
-  color              : wheat;
 }
 
 header {
@@ -52,7 +46,6 @@ ul.navbar-nav li {
 
 ul.navbar-nav li a {
   text-decoration: none;
-  color          : wheat;
 }
 
 ul.navbar-nav li a:hover {
@@ -61,4 +54,8 @@ ul.navbar-nav li a:hover {
 
 div#container h2 {
   text-align: center;
+}
+
+.text-heading{
+  font-weight: 700;
 }

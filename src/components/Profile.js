@@ -65,19 +65,33 @@ const Profile = props => {
 
     return (
         <div>
+            <div className="row text-heading">
+                <div className="col-md-3">Name</div>
+                <div className="col-md-3">email</div>
+                <div className="col-md-4">Address</div>
+            </div>
+            <div className="row">
+                <div className="col-md-12">&nbsp;</div>
+            </div>
             <div className="row">
                 <div className="col-md-3">{currentProfile.name}</div>
                 <div className="col-md-3">{currentProfile.email}</div>
                 <div className="col-md-4">{currentProfile.address}</div>
             </div>
             <div className="row">
-                <div className="col-md-2">Total Points:</div>
-                <div className="col-md-4">
+                <div className="col-md-12">&nbsp;</div>
+            </div>
+            <div className="row">
+                <div className="col-md-2 text-heading">Total Points:</div>
+                <div className="col-md-1">
                     {currentProfileTotalPoints}
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+                <div className="col-md-3">
                     <button onClick={addPoint} data-uid={currentProfile.id} className="btn btn-info">Add Point</button>
                 </div>
-                <div className="col-md-2">Total Challenges:</div>
+            </div>
+            <div className="row">
+                <div className="col-md-2 text-heading">Total Challenges:</div>
                 <div className="col-md-2">{currentProfileChallenges}</div>
             </div>
         </div>
