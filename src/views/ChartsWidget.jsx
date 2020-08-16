@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card'
+import Col from 'react-bootstrap/Col';
 
 class ChartsWidget extends React.Component {
    render() {
@@ -9,9 +10,9 @@ class ChartsWidget extends React.Component {
             <Card >
                <Card.Body>
                   <Card.Title>Statistics</Card.Title>
-                  <Card.Text>
+                  <Col lg="12">
 
-                  </Card.Text>
+                  </Col>
                </Card.Body>
             </Card>
          </div>

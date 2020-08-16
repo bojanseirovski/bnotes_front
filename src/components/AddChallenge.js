@@ -7,12 +7,6 @@ import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import ChallengeService from "../service/ChallengeService.js";
 
 const AddChallenge = props => {
-    const initialChallengeState = {
-        id: null,
-        name: "",
-        start: new Date(),
-        end: ""
-    };
 
     const formatDate = (date) => {
         var d = new Date(date),

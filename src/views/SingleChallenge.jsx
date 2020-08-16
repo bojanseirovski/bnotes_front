@@ -1,7 +1,8 @@
 import React from 'react';
 import Challenge from '../components/Challenge.js';
 import AddChallenge from '../components/AddChallenge.js';
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
 
 class SingleChallenge extends React.Component {
    render() {
@@ -13,9 +14,9 @@ class SingleChallenge extends React.Component {
                   <Card>
                      <Card.Body>
                         <Card.Title>Challenge</Card.Title>
-                        <Card.Text>
+                        <Col lg="12">
                            <Challenge props={params}/>
-                        </Card.Text>
+                        </Col>
                      </Card.Body>
                   </Card>
                </div>
@@ -23,9 +24,9 @@ class SingleChallenge extends React.Component {
                   <Card>
                      <Card.Body>
                         <Card.Title>New Challenge</Card.Title>
-                        <Card.Text>
+                        <Col lg="12">
                            <AddChallenge />
-                        </Card.Text>
+                        </Col>
                      </Card.Body>
                   </Card>
                </div>

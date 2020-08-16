@@ -1,6 +1,7 @@
 import React from 'react';
 import Profiles from '../components/Profiles.js';
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
 
 class ProfileWidget extends React.Component {
 
@@ -17,9 +18,9 @@ class ProfileWidget extends React.Component {
             <Card>
                <Card.Body>
                   <Card.Title>Profiles</Card.Title>
-                  <Card.Text>
+                  <Col lg="12">
                   <Profiles />
-                  </Card.Text>
+                  </Col>
                </Card.Body>
             </Card>
          </div>

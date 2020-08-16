@@ -7,10 +7,10 @@ import 'regenerator-runtime/runtime'
 import HomePage from './views/HomePage.jsx';
 import AllProfiles from './views/AllProfiles.jsx';
 import SingleProfile from './views/SingleProfile.jsx';
-import Report from './views/Report.jsx';
 import SingleChallenge from './views/SingleChallenge.jsx';
 import AllChallenges from './views/AllChallenges.jsx';
 import Charts from './views/Charts.jsx';
+// import Report from './views/Report.jsx';
 
 class App extends React.Component {
    render() {

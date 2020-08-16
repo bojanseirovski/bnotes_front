@@ -1,6 +1,7 @@
 import React from 'react';
 import Profile from '../components/Profile.js';
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
 
 class OneProfile extends React.Component {
 
@@ -13,9 +14,9 @@ class OneProfile extends React.Component {
                   <Card>
                      <Card.Body>
                         <Card.Title>Profile</Card.Title>
-                        <Card.Text>
+                        <Col lg="12">
                         <Profile props={params} />
-                        </Card.Text>
+                        </Col>
                      </Card.Body>
                   </Card>
                </div>
@@ -23,9 +24,9 @@ class OneProfile extends React.Component {
                   <Card>
                      <Card.Body>
                         <Card.Title>Options</Card.Title>
-                        <Card.Text>
+                        <Col lg="12">
 
-                        </Card.Text>
+                        </Col>
                      </Card.Body>
                   </Card>
                </div>

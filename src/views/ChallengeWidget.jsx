@@ -1,6 +1,7 @@
 import React from 'react';
 import Challenges from '../components/AllChallenges.js';
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
 
 class ChallengeWidget extends React.Component {
    render() {
@@ -10,9 +11,9 @@ class ChallengeWidget extends React.Component {
             <Card>
                <Card.Body>
                   <Card.Title>Challenges</Card.Title>
-                  <Card.Text>
+                  <Col lg="12">
                   <Challenges/>
-                  </Card.Text>
+                  </Col>
                </Card.Body>
             </Card>
          </div>

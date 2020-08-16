@@ -45,12 +45,7 @@ const Challenge = props => {
     const getChallengeTotalPoints = id => {
         ChallengeService.getChallengeTotalPoints(id)
             .then(response => {
-                let totalPoints = 0;
-                response.data.map((onePoint, index) => (
-                    totalPoints = totalPoints + onePoint.point
-                ));
-
-                setCurrentChallengeTotalPoints(totalPoints);
+                setCurrentChallengeTotalPoints(response.data.points);
             })
             .catch(e => {
                 console.log(e);
@@ -58,8 +53,7 @@ const Challenge = props => {
     }
 
     const addPoint = id => {
-        const uid = id.target.dataset.uid;
-        ProfileService.addPoint(uid)
+        ProfileService.addPoint(id.target.dataset.uid)
             .catch(e => {
                 console.log(e);
             });
