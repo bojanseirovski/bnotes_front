@@ -10,9 +10,9 @@ export default class HomePage extends React.Component {
       return (
          <div id="container">
             <div className="row">
-               {<ProfileWidget/>}
-               {<ChallengeWidget/>}
-               {<ChartsWidget/>}
+               {<ProfileWidget />}
+               {<ChallengeWidget />}
+               {<ChartsWidget />}
             </div>
          </div>
       );

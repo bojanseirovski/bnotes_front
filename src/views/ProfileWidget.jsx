@@ -1,6 +1,6 @@
 import React from 'react';
 import Profiles from '../components/Profiles.js';
-
+import Card from 'react-bootstrap/Card'
 
 class ProfileWidget extends React.Component {
 
@@ -14,10 +14,14 @@ class ProfileWidget extends React.Component {
    render() {
       return (
          <div className="col-md-4" id="profilew">
-            <h2>Profiles</h2>
-            <div>
-               <Profiles/>
-            </div>
+            <Card>
+               <Card.Body>
+                  <Card.Title>Profiles</Card.Title>
+                  <Card.Text>
+                  <Profiles />
+                  </Card.Text>
+               </Card.Body>
+            </Card>
          </div>
       );
    }

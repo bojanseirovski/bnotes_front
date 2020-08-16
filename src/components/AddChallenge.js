@@ -42,7 +42,7 @@ const AddChallenge = props => {
     }
 
     const handleInputChange = event => {
-        setName( event.target.value);
+        setName(event.target.value);
     };
 
     const addChallenge = () => {
@@ -65,38 +65,33 @@ const AddChallenge = props => {
     }
 
     return (
-        <div>
-            <div className="row">
-                <div className="col-md5">New challenge</div>
+        <div className="row">
+            <div className="col-md-3">
+                <input type="text"
+                    name="challenge_n"
+                    value={cname}
+                    className="form-control"
+                    onChange={handleInputChange}
+                    placeholder="Challenge name" />
             </div>
-            <div className="row">
-                <div className="col-md-3">
-                    <input type="text"
-                        name="challenge_n"
-                        value={cname}
-                        className="form-control"
-                        onChange={handleInputChange}
-                        placeholder="Challenge name" />
-                </div>
-                <div className="col-md-3">
-                    <DatePicker
-                        name="startD"
-                        selected={sdate}
-                        onChange={sdate => handleChange('startD', sdate)}
-                        className="form-control"
-                    />
-                </div>
-                <div className="col-md-3">
-                    <DatePicker
-                        name="endD"
-                        selected={edate}
-                        onChange={edate => handleChange('endD', edate)}
-                        className="form-control"
-                    />
-                </div>
-                <div className="col-md-2">
-                    <button onClick={addChallenge} className="btn btn-info">Add</button>
-                </div>
+            <div className="col-md-3">
+                <DatePicker
+                    name="startD"
+                    selected={sdate}
+                    onChange={sdate => handleChange('startD', sdate)}
+                    className="form-control"
+                />
+            </div>
+            <div className="col-md-3">
+                <DatePicker
+                    name="endD"
+                    selected={edate}
+                    onChange={edate => handleChange('endD', edate)}
+                    className="form-control"
+                />
+            </div>
+            <div className="col-md-2">
+                <button onClick={addChallenge} className="btn btn-info">Create</button>
             </div>
         </div>
     );

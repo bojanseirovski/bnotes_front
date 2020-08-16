@@ -1,15 +1,20 @@
 import React from 'react';
 import Challenges from '../components/AllChallenges.js';
+import Card from 'react-bootstrap/Card'
 
 class ChallengeWidget extends React.Component {
    render() {
 
       return (
          <div className="col-md-4" id="challengew">
-            <h2>Challenges</h2>
-            <div>
-            {<Challenges/>}
-            </div>
+            <Card>
+               <Card.Body>
+                  <Card.Title>Challenges</Card.Title>
+                  <Card.Text>
+                  <Challenges/>
+                  </Card.Text>
+               </Card.Body>
+            </Card>
          </div>
       );
    }
